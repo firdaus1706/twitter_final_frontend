@@ -30,7 +30,7 @@ const Tweet = ({ tweet }) => {
   const deleteTweetHandler = async (id) => {
     try {
       axios.defaults.withCredentials = true;
-      const res = await axios.put(`${TWEET_API_END_POINT}/delete/${id}`);
+      const res = await axios.delete(`${TWEET_API_END_POINT}/delete/${id}`);
       console.log(res);
       dispatch(getRefresh());
       toast.success(res.data.message);
